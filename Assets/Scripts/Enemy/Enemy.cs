@@ -7,8 +7,8 @@ using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour {
     public int currentHealth {get {return health;}}
-    protected int health;
-    protected float speed;
+    [SerializeField] protected int health;
+    [SerializeField] protected float speed;
     protected Animator animator;
     protected Rigidbody2D rb;
     protected Transform player;
@@ -48,17 +48,17 @@ public abstract class Enemy : MonoBehaviour {
         Vector2 position = transform.position;
         if (randomNum == 0) {
             // move along x-axis
-            position.x = position.x + (movement.x * speed * Time.deltaTime);
+            position.x += movement.x * speed * Time.deltaTime;
         } else {
             // move along y-axis
-            position.y = position.y + (movement.y * speed * Time.deltaTime);
+            position.y += movement.y * speed * Time.deltaTime;
         }
         rb.MovePosition(position);
     }
 
     // Decreases the health of the enemy by the given amount.
     public void DecreaseHealth(int healthLost) {
-        health = health - healthLost;
+        health -= healthLost;
         if (health <= 0) {
             Die();
         }

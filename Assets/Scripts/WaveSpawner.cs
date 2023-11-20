@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Schema;
 using UnityEngine;
 
 // Tutorials: https://www.youtube.com/watch?v=7T-MTo8Uaio and https://www.youtube.com/watch?v=pKN8jVnSKyM&t=782s
 [System.Serializable]
 public class SpawnedEnemy {
     public GameObject enemyPrefab;
-    // cost of spawining the enemy
-    public int cost;
+    public int cost; // cost of spawning the enemy
+    public int probability; // probability of being spawned
 }
 
 // public class Wave {
@@ -18,23 +19,24 @@ public class SpawnedEnemy {
 public class WaveSpawner : MonoBehaviour {
     // the current wave number
     [SerializeField] int currWave;
-    [SerializeField] int waveValueMultiplier;
+    [SerializeField] int maxWaveValue;
+    [SerializeField] int minWaveValue;
     // the amount a wave can spend on spawning enemies
     int waveValue;
     [SerializeField] List<GameObject> enemiesToSpawn = new List<GameObject>();
     // array of all the enemy spawn points
     [SerializeField] Transform[] spawnPoints;
-    // 4 waves of 21 seconds each for a total of 1m 24s
-    float waveDuration = 21f;
+    float levelTime = 90f;  // total duration of level
+    float waveDuration;
     // The enemies that can be spawned
-    [SerializeField] List<SpawnedEnemy> possibleEnemies = new List<SpawnedEnemy>();
-    float waveTimer;
+    [SerializeField] SpawnedEnemy[] possibleEnemies;
     float spawnInterval;
     float spawnTimer;
     // The total number of waves for a scene
-    int totalWaves = 4;
+    [SerializeField] int totalWaves;
 
     void Start() {
+        waveDuration = levelTime / totalWaves;
         // Wait 2 seconds before 1st wave
         spawnTimer = 2f;
         currWave = 1;
@@ -65,9 +67,8 @@ public class WaveSpawner : MonoBehaviour {
     }
 
     void SpawnWave() {
-        waveValue = currWave * waveValueMultiplier;
+        waveValue = Random.Range(minWaveValue, maxWaveValue);
         SpawnEnemies();
-
         spawnInterval = waveDuration / enemiesToSpawn.Count;
         //waveTimer = waveDuration;
     }
@@ -78,7 +79,7 @@ public class WaveSpawner : MonoBehaviour {
         // in loop, grab random enemy and see if we can afford it. If so, add it to the
         // list of enemies to spawn and deduct its cost from waveValue
         while (waveValue > 0) {
-            int randEnemyNum = Random.Range(0, possibleEnemies.Count);
+            int randEnemyNum = getEnemyToSpawn();
             int randEnemyCost = possibleEnemies[randEnemyNum].cost;
             if (waveValue - randEnemyCost >= 0) {
                 spawnedEnemies.Add(possibleEnemies[randEnemyNum].enemyPrefab);
@@ -87,5 +88,17 @@ public class WaveSpawner : MonoBehaviour {
         }
         enemiesToSpawn.Clear();
         enemiesToSpawn = spawnedEnemies;
+    }
+
+    int getEnemyToSpawn() {
+        int cumulProb = 0;
+        int currentProb = Random.Range(0, 100);
+        for (int i = 0; i < possibleEnemies.Length; i++) {
+            cumulProb += possibleEnemies[i].probability;
+            if (currentProb <= cumulProb) {
+                return i;
+            }
+        }
+        return 0;
     }
 }

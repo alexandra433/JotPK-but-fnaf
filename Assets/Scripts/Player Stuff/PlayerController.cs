@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour {
     // https://docs.unity3d.com/ScriptReference/Time-time.html
     public float fireRate = 0.3f;
     float nextFire = 0.0f;
-    
+
 
     // Start is called before the first frame update
     void Start() {
@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour {
         animator = GetComponent<Animator>();
     }
 
-    void Update() {     
+    void Update() {
         if (shootDirection != Vector2.zero && Time.time > nextFire) {
             nextFire = Time.time + fireRate;
             animator.SetFloat("Shoot X", shootDirection.x);
@@ -55,9 +55,9 @@ public class PlayerController : MonoBehaviour {
             }
         } else {
             animator.SetBool("isMoving", false);
-        }   
+        }
     }
-    
+
     void OnMove(InputValue movementValue) {
         movementInput = movementValue.Get<Vector2>();
     }
@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour {
         GameObject bulletObject = Instantiate(bulletPrefab, rb.position + shootDirection * 0.5f, Quaternion.identity);
         BulletScript bullet = bulletObject.GetComponent<BulletScript>();
         bullet.Shoot(shootDirection);
-    }  
+    }
 
     // Player dies after touching an Enemy
     public void Die() {
@@ -79,5 +79,5 @@ public class PlayerController : MonoBehaviour {
         animator.Play("player_death");
         Destroy(GetComponent<BoxCollider>());
         Destroy(gameObject, 0.4f);
-    } 
+    }
 }

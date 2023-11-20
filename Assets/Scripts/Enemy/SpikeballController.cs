@@ -8,30 +8,37 @@ public class SpikeballController : Enemy {
     // amount of time spikeball has to move before becoming a spike
     float moveTime = 5f;
     float startTime = 0.0f;
-    Vector3 spikePosition;
+    Vector3 spikePosition; // the position that the spike wants to get to
 
     protected override void Awake() {
         base.Awake();
         health = 2;
-        speed = 0.95f * playerSpeed;
+        speed = playerSpeed;
 
         // pick a location for spike
         spikePosition.x = Random.Range(-6f, 6f);
         spikePosition.y = Random.Range(-6f, 6f);
-        Debug.Log(spikePosition);
+        // Debug.Log(spikePosition);
         animator.SetBool("IsSpike", false);
     }
 
-    protected override void FixedUpdate() {
+    protected override void Update()
+    {
         // after a Spikeball turns into a spike, it stops moving
-        if (!isSpike && startTime + Time.fixedDeltaTime < moveTime) {
+        if (!isSpike && startTime < moveTime) {
             Vector2 direction = spikePosition - transform.position;
             direction.Normalize();
             movement = direction;
-            Move();
-            startTime += Time.fixedDeltaTime;
         } else if (!isSpike) {
             BecomeSpike();
+            isSpike = true;
+        }
+        startTime += Time.deltaTime;
+    }
+
+    protected override void FixedUpdate() {
+        if (!isSpike) {
+            Move();
         }
     }
 
@@ -39,12 +46,10 @@ public class SpikeballController : Enemy {
     void BecomeSpike() {
         // PROBLEM
         if (!isSpike) {
-            isSpike = true;
-            health = health + 5;
-            Debug.Log(health);
+            health += 5;
+            speed = 0;
             animator.SetTrigger("Spike");
             animator.SetBool("IsSpike", true);
         }
     }
-
 }
