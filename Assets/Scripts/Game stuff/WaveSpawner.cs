@@ -26,6 +26,8 @@ public class WaveSpawner : MonoBehaviour {
     [SerializeField] List<GameObject> enemiesToSpawn = new List<GameObject>();
     // array of all the enemy spawn points
     [SerializeField] Transform[] spawnPoints;
+    // for testing
+    [SerializeField] bool debug;
     float levelTime = 90f;  // total duration of level
     float waveDuration;
     // The enemies that can be spawned
@@ -36,7 +38,13 @@ public class WaveSpawner : MonoBehaviour {
     [SerializeField] int totalWaves;
     float restTime = 2f; // rest time between waves
 
+    [SerializeField] SignalGame endOfLevel;
+
     void Start() {
+        if (debug) {
+            levelTime = 30f;
+            totalWaves = 2;
+        }
         waveDuration = levelTime / totalWaves;
         // Wait 2 seconds before 1st wave
         spawnTimer = 2f;
@@ -55,9 +63,11 @@ public class WaveSpawner : MonoBehaviour {
                 spawnTimer = spawnInterval;
             } else {
                 if (currWave + 1 <= totalWaves) {
-                    StartCoroutine(waitBetweenWavesCo());
+                    StartCoroutine(WaitBetweenWavesCo());
                     currWave += 1;
                     SpawnWave();
+                } else {
+                    endOfLevel.Raise();
                 }
             }
         } else {
@@ -68,7 +78,7 @@ public class WaveSpawner : MonoBehaviour {
 
     }
 
-    IEnumerator waitBetweenWavesCo() {
+    IEnumerator WaitBetweenWavesCo() {
         yield return new WaitForSeconds(restTime);
     }
 

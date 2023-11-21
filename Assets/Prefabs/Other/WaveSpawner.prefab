@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currWave: 0
-  maxWaveValue: 10
+  maxWaveValue: 40
   minWaveValue: 20
   enemiesToSpawn: []
   spawnPoints:
@@ -265,6 +265,15 @@ MonoBehaviour:
   - enemyPrefab: {fileID: 6999934276623452463, guid: decbd5eb8d022804cbbf3f5bd91fd70e, type: 3}
     cost: 1
     probability: 100
+  - enemyPrefab: {fileID: 0}
+    cost: 0
+    probability: 20
+  - enemyPrefab: {fileID: 0}
+    cost: 0
+    probability: 60
+  - enemyPrefab: {fileID: 1239428508943406119, guid: 269a089e6f4b1b545b10a3682b92a051, type: 3}
+    cost: 6
+    probability: 20
   totalWaves: 6
 --- !u!114 &335123518
 MonoBehaviour:
