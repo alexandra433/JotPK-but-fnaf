@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1239428508943406113}
   - component: {fileID: 1239428508943406118}
   - component: {fileID: 1239428508943406114}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Spikeball
   m_TagString: Enemy
   m_Icon: {fileID: 0}

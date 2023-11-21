@@ -9,8 +9,9 @@ public class Life : PowerUp
 
     void OnTriggerEnter2D (Collider2D other) {
         if (other.CompareTag("Player")) {
-            playerHealth.initialValue += amountToIncrease;
+            playerHealth.RuntimeValue += amountToIncrease;
             powerUpSignal.Raise();
+            Destroy(this.gameObject);
         }
     }
 }

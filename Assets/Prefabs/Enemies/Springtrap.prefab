@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6999934276623452456}
   - component: {fileID: 7520582247853341337}
   - component: {fileID: 6725806303789357090}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Springtrap
   m_TagString: Enemy
   m_Icon: {fileID: 0}
