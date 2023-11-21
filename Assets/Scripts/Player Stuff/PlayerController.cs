@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour {
     public float fireRate = 0.3f;
     float nextFire = 0.0f;
 
+    [SerializeField] SignalGame playerDeathSignal;
+
 
     // Start is called before the first frame update
     void Start() {
@@ -75,6 +77,7 @@ public class PlayerController : MonoBehaviour {
 
     // Player dies after touching an Enemy
     public void Die() {
+        playerDeathSignal.Raise();
         moveSpeed = 0.0f;
         animator.Play("player_death");
         Destroy(GetComponent<BoxCollider>());

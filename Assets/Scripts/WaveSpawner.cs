@@ -34,6 +34,7 @@ public class WaveSpawner : MonoBehaviour {
     float spawnTimer;
     // The total number of waves for a scene
     [SerializeField] int totalWaves;
+    float restTime = 2f; // rest time between waves
 
     void Start() {
         waveDuration = levelTime / totalWaves;
@@ -54,6 +55,7 @@ public class WaveSpawner : MonoBehaviour {
                 spawnTimer = spawnInterval;
             } else {
                 if (currWave + 1 <= totalWaves) {
+                    StartCoroutine(waitBetweenWavesCo());
                     currWave += 1;
                     SpawnWave();
                 }
@@ -64,6 +66,10 @@ public class WaveSpawner : MonoBehaviour {
             // waveTimer -= Time.fixedDeltaTime;
         }
 
+    }
+
+    IEnumerator waitBetweenWavesCo() {
+        yield return new WaitForSeconds(restTime);
     }
 
     void SpawnWave() {

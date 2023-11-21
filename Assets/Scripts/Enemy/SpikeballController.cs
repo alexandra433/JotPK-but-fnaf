@@ -47,7 +47,7 @@ public class SpikeballController : Enemy {
         // PROBLEM
         if (!isSpike) {
             health += 5;
-            speed = 0;
+            speed = 0.0f;
             animator.SetTrigger("Spike");
             animator.SetBool("IsSpike", true);
         }
