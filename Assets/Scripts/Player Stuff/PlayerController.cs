@@ -23,12 +23,11 @@ public class PlayerController : MonoBehaviour {
     public float fireRate = 0.3f;
     float nextFire = 0.0f;
 
-    [SerializeField]  VectorValue startingPosition;
+    [SerializeField] VectorValue startingPosition;
 
     [SerializeField] SignalGame playerDeathSignal;
     [SerializeField] SignalGame gameOverSignal;
     [SerializeField] FloatValue playerLives;
-
 
     // Start is called before the first frame update
     void Start() {
@@ -90,10 +89,6 @@ public class PlayerController : MonoBehaviour {
         if (playerLives.RuntimeValue >= 0) {
             playerDeathSignal.Raise();
             StartCoroutine(PlayerDeathCo());
-            transform.position = startingPosition.initialValue;
-            GetComponent<Collider2D>().enabled = true;
-            moveSpeed = baseMoveSpeed.initialValue;
-            this.gameObject.SetActive(true);
         } else {
             gameOverSignal.Raise();
             StartCoroutine(PlayerDeathCo());
@@ -106,7 +101,12 @@ public class PlayerController : MonoBehaviour {
         moveSpeed = 0.0f;
         GetComponent<Collider2D>().enabled = false;
         animator.Play("player_death");
-        yield return new WaitForSeconds(0.4f);
+        // wait more than 0.4 seconds
+        yield return new WaitForSeconds(1f);
         this.gameObject.SetActive(false);
+        transform.position = startingPosition.initialValue;
+        GetComponent<Collider2D>().enabled = true;
+        moveSpeed = baseMoveSpeed.initialValue;
+        this.gameObject.SetActive(true);
     }
 }

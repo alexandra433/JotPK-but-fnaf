@@ -114,6 +114,17 @@ public class WaveSpawner : MonoBehaviour {
         enemiesToSpawn.Clear();
         // make the already spawned enemies stop moving?
         // clear the already spawned enemies after 0.4f
+        spawnTimer = restTime;
+        currWave--;
+        //StartCoroutine(WaitForDeathAnimationCo());
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject enemy in enemies) {
+            Destroy(enemy);
+        }
         // start the same wave again
     }
+
+    // IEnumerator WaitForDeathAnimationCo() {
+    //     yield return new WaitForSeconds(0.4f);
+    // }
 }

@@ -169,7 +169,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &221306033
 MonoBehaviour:
@@ -295,7 +295,7 @@ RectTransform:
   - {fileID: 1890398302}
   - {fileID: 1419110969}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -399,7 +399,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &331210820
 GameObject:
@@ -1042,107 +1042,6 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
---- !u!1 &335123515 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8152410648817771710, guid: 982b1c9d049b6f04d94afbc4b7f4994d, type: 3}
-  m_PrefabInstance: {fileID: 8152410648606976183}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &335123516 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8152410648817771709, guid: 982b1c9d049b6f04d94afbc4b7f4994d, type: 3}
-  m_PrefabInstance: {fileID: 8152410648606976183}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 335123515}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de3c1a431d1e21443bdcc3c5166cb0cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &335123518
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 335123515}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45c454d30f3b1f5469707fb855fae828, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  signal: {fileID: 11400000, guid: c2a517372069e0b45a5a7593a223902f, type: 2}
-  signalEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 335123516}
-        m_TargetAssemblyTypeName: WaveSpawner, Assembly-CSharp
-        m_MethodName: StopSpawning
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!1001 &344067977
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1239428508943406115, guid: 269a089e6f4b1b545b10a3682b92a051, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1239428508943406115, guid: 269a089e6f4b1b545b10a3682b92a051, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.8692183
-      objectReference: {fileID: 0}
-    - target: {fileID: 1239428508943406115, guid: 269a089e6f4b1b545b10a3682b92a051, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.6280527
-      objectReference: {fileID: 0}
-    - target: {fileID: 1239428508943406115, guid: 269a089e6f4b1b545b10a3682b92a051, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1239428508943406115, guid: 269a089e6f4b1b545b10a3682b92a051, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1239428508943406115, guid: 269a089e6f4b1b545b10a3682b92a051, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1239428508943406115, guid: 269a089e6f4b1b545b10a3682b92a051, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1239428508943406115, guid: 269a089e6f4b1b545b10a3682b92a051, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1239428508943406115, guid: 269a089e6f4b1b545b10a3682b92a051, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1239428508943406115, guid: 269a089e6f4b1b545b10a3682b92a051, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1239428508943406115, guid: 269a089e6f4b1b545b10a3682b92a051, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1239428508943406119, guid: 269a089e6f4b1b545b10a3682b92a051, type: 3}
-      propertyPath: m_Name
-      value: Spikeball
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 269a089e6f4b1b545b10a3682b92a051, type: 3}
 --- !u!1 &610501424
 GameObject:
   m_ObjectHideFlags: 0
@@ -4630,7 +4529,7 @@ Transform:
   - {fileID: 640271823}
   - {fileID: 331210821}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2494377039798703663
 PrefabInstance:
@@ -4645,7 +4544,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2494377040002563262, guid: 103190b051336c341b92dd2fb79b9ba2, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2494377040002563262, guid: 103190b051336c341b92dd2fb79b9ba2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4698,7 +4597,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8152410648817771708, guid: 982b1c9d049b6f04d94afbc4b7f4994d, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8152410648817771708, guid: 982b1c9d049b6f04d94afbc4b7f4994d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4740,46 +4639,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8152410648817771709, guid: 982b1c9d049b6f04d94afbc4b7f4994d, type: 3}
-      propertyPath: totalWaves
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8152410648817771709, guid: 982b1c9d049b6f04d94afbc4b7f4994d, type: 3}
-      propertyPath: maxWaveValue
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8152410648817771709, guid: 982b1c9d049b6f04d94afbc4b7f4994d, type: 3}
-      propertyPath: minWaveValue
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 8152410648817771709, guid: 982b1c9d049b6f04d94afbc4b7f4994d, type: 3}
-      propertyPath: waveValueMultiplier
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8152410648817771709, guid: 982b1c9d049b6f04d94afbc4b7f4994d, type: 3}
-      propertyPath: enemiesToSpawn.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8152410648817771709, guid: 982b1c9d049b6f04d94afbc4b7f4994d, type: 3}
-      propertyPath: possibleEnemies.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8152410648817771709, guid: 982b1c9d049b6f04d94afbc4b7f4994d, type: 3}
-      propertyPath: enemiesToSpawn.Array.data[0]
-      value: 
-      objectReference: {fileID: 6999934276623452463, guid: decbd5eb8d022804cbbf3f5bd91fd70e, type: 3}
-    - target: {fileID: 8152410648817771709, guid: 982b1c9d049b6f04d94afbc4b7f4994d, type: 3}
-      propertyPath: possibleEnemies.Array.data[1].cost
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8152410648817771709, guid: 982b1c9d049b6f04d94afbc4b7f4994d, type: 3}
-      propertyPath: possibleEnemies.Array.data[0].probability
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 8152410648817771709, guid: 982b1c9d049b6f04d94afbc4b7f4994d, type: 3}
-      propertyPath: possibleEnemies.Array.data[1].enemyPrefab
-      value: 
-      objectReference: {fileID: 6999934276623452463, guid: decbd5eb8d022804cbbf3f5bd91fd70e, type: 3}
     - target: {fileID: 8152410648817771710, guid: 982b1c9d049b6f04d94afbc4b7f4994d, type: 3}
       propertyPath: m_Name
       value: WaveSpawner
