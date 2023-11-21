@@ -13,7 +13,8 @@ public abstract class Enemy : MonoBehaviour {
     protected Rigidbody2D rb;
     protected Transform player;
     // not sure how to get player speed from player script
-    protected float playerSpeed = 2f;
+    [SerializeField] FloatValue basePlayerSpeed;
+    protected float playerSpeed;
     protected Vector2 movement; // The direction that the enemy should move in
 
     protected virtual void Awake() {
@@ -22,6 +23,7 @@ public abstract class Enemy : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         player = GameObject.FindWithTag("Player").transform;
+        playerSpeed = basePlayerSpeed.initialValue;
     }
 
     // Uses the player's current position to calculate the direction the enemy

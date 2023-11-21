@@ -30,7 +30,7 @@ public class BulletScript: MonoBehaviour {
 
     // Detect collisions
     void OnCollisionEnter2D(Collision2D other) {
-        Debug.Log("Projectile Collision with " + other.gameObject);
+        // Debug.Log("Projectile Collision with " + other.gameObject);
         //SpringtrapController e = other.collider.GetComponent<SpringtrapController>();
         Enemy e = other.collider.GetComponent<Enemy>();
             if (e != null) {

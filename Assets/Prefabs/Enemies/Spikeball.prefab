@@ -102,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   speed: 0
+  basePlayerSpeed: {fileID: 11400000, guid: 85f7a4adfcb0a2c458e48fe4e6692946, type: 2}
   isSpike: 0
 --- !u!50 &1239428508943406113
 Rigidbody2D:

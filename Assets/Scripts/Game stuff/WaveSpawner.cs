@@ -107,4 +107,13 @@ public class WaveSpawner : MonoBehaviour {
         }
         return 0;
     }
+
+    public void StopSpawning() {
+        // clear the list of enemies that haven't been spawned
+        Debug.Log("stop");
+        enemiesToSpawn.Clear();
+        // make the already spawned enemies stop moving?
+        // clear the already spawned enemies after 0.4f
+        // start the same wave again
+    }
 }

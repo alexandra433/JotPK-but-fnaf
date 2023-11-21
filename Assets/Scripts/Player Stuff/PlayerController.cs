@@ -5,7 +5,8 @@ using UnityEngine.InputSystem;
 
 // Control player movement
 public class PlayerController : MonoBehaviour {
-    public float moveSpeed = 2f;
+    [SerializeField] FloatValue baseMoveSpeed;
+    [SerializeField] float moveSpeed;
     [SerializeField]
     float collisionOffset;
     public ContactFilter2D movementFilter;
@@ -22,13 +23,21 @@ public class PlayerController : MonoBehaviour {
     public float fireRate = 0.3f;
     float nextFire = 0.0f;
 
+    [SerializeField]  VectorValue startingPosition;
+
     [SerializeField] SignalGame playerDeathSignal;
+    [SerializeField] SignalGame gameOverSignal;
+    [SerializeField] FloatValue playerLives;
 
 
     // Start is called before the first frame update
     void Start() {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        // idk where else to put this
+        playerLives.RuntimeValue = playerLives.initialValue;
+        transform.position = startingPosition.initialValue;
+        moveSpeed = baseMoveSpeed.initialValue;
     }
 
     void Update() {
@@ -77,10 +86,27 @@ public class PlayerController : MonoBehaviour {
 
     // Player dies after touching an Enemy
     public void Die() {
-        playerDeathSignal.Raise();
+        playerLives.RuntimeValue -= 1;
+        if (playerLives.RuntimeValue >= 0) {
+            playerDeathSignal.Raise();
+            StartCoroutine(PlayerDeathCo());
+            transform.position = startingPosition.initialValue;
+            GetComponent<Collider2D>().enabled = true;
+            moveSpeed = baseMoveSpeed.initialValue;
+            this.gameObject.SetActive(true);
+        } else {
+            gameOverSignal.Raise();
+            StartCoroutine(PlayerDeathCo());
+        }
+        // Destroy(GetComponent<BoxCollider>());
+        // Destroy(gameObject, 0.4f);
+    }
+
+    IEnumerator PlayerDeathCo() {
         moveSpeed = 0.0f;
+        GetComponent<Collider2D>().enabled = false;
         animator.Play("player_death");
-        Destroy(GetComponent<BoxCollider>());
-        Destroy(gameObject, 0.4f);
+        yield return new WaitForSeconds(0.4f);
+        this.gameObject.SetActive(false);
     }
 }
