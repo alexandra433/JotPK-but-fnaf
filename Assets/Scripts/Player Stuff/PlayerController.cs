@@ -90,7 +90,6 @@ public class PlayerController : MonoBehaviour {
             StartCoroutine(PlayerDeathCo());
         } else {
             gameOverSignal.Raise();
-            StartCoroutine(PlayerDeathCo());
         }
         // Destroy(GetComponent<BoxCollider>());
         // Destroy(gameObject, 0.4f);
