@@ -66,7 +66,7 @@ public class WaveSpawner : MonoBehaviour {
                     StartCoroutine(WaitBetweenWavesCo());
                     currWave += 1;
                     SpawnWave();
-                } else {
+                } else if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0) {
                     endOfLevel.Raise();
                 }
             }
