@@ -7,8 +7,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour {
     [SerializeField] FloatValue baseMoveSpeed;
     [SerializeField] float moveSpeed;
-    [SerializeField]
-    float collisionOffset;
+    [SerializeField] float collisionOffset;
     public ContactFilter2D movementFilter;
     Vector2 movementInput;
     Rigidbody2D rb;
