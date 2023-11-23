@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public abstract class UsableItem : MonoBehaviour
+public abstract class UsableItem : Collectible
 {
     UsePowerUp useAction;
     protected bool isUsable;
     public SignalGame powerUpSignal;
     public Sprite itemSprite;
     [SerializeField] protected Inventory inventory;
-    public UsableItemManager usableItemManager;
+    // [SerializeField] Image affectedImage;
+    // protected UsableItemManager usableItemManager;
 
     private void Awake() {
         useAction = new UsePowerUp();
@@ -38,7 +40,7 @@ public abstract class UsableItem : MonoBehaviour
     void OnTriggerEnter2D (Collider2D other) {
         if (other.CompareTag("Player")) {
             isUsable = true;
-            usableItemManager.AddItemToInventoryDisplay(this);
+            //usableItemManager.AddItemToInventoryDisplay(this);
             //inventory.items.Add(this);
             //powerUpSignal.Raise(); // tell the ui to show the powerUp
             this.gameObject.GetComponent<SpriteRenderer>().enabled = false;

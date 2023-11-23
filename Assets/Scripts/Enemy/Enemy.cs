@@ -17,6 +17,8 @@ public abstract class Enemy : MonoBehaviour {
     protected float playerSpeed;
     protected Vector2 movement; // The direction that the enemy should move in
 
+    [SerializeField] protected LootTable thisLoot;
+
     protected virtual void Awake() {
         // virtual methods can be overridden in subclasses
         // Awake() instead of Start() because enemies will be spawned in
@@ -68,12 +70,23 @@ public abstract class Enemy : MonoBehaviour {
 
     // Removes the enemy from the game and plays its death animation.
     public void Die() {
-        animator.SetTrigger("Die");
         // Remove the box collider so that the player cannot collide with an enemy
         // that is already dead.
         Destroy(GetComponent<BoxCollider>());
+        animator.SetTrigger("Die");
+        MakeLoot();
         // Wait 0.4 seconds for the death animation to finish playing.
         Destroy(gameObject, 0.4f);
+    }
+
+    private void MakeLoot() {
+        if (thisLoot != null)
+        {
+            Collectible current = thisLoot.LootCollectible();
+            if (current != null) {
+                Instantiate(current.gameObject, transform.position, Quaternion.identity);
+            }
+        }
     }
 
     // Player dies after colliding with an enemy.

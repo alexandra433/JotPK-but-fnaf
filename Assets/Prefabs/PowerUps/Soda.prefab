@@ -99,10 +99,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpSignal: {fileID: 11400000, guid: 935856ef936c2304bb726be507e2ea25, type: 2}
+  itemSprite: {fileID: 121435961, guid: cc85083c7a3e4aa4b9060875733d3ebb, type: 3}
   inventory: {fileID: 11400000, guid: 0583ce0d586e2324e9693ee17ffd4948, type: 2}
+  usableItemManager: {fileID: 0}
   speedMultiplier: 2
   playerSpeed: {fileID: 11400000, guid: 85f7a4adfcb0a2c458e48fe4e6692946, type: 2}
-  usableItemManager: {fileID: 0}
 --- !u!61 &4860638969996793979
 BoxCollider2D:
   m_ObjectHideFlags: 0
