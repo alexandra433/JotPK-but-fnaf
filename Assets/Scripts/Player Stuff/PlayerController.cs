@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 // Control player movement
 public class PlayerController : MonoBehaviour {
     [SerializeField] FloatValue baseMoveSpeed;
-    [SerializeField] float moveSpeed;
+    public float moveSpeed;
     [SerializeField] float collisionOffset;
     public ContactFilter2D movementFilter;
     Vector2 movementInput;
@@ -32,10 +32,9 @@ public class PlayerController : MonoBehaviour {
     void Start() {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        // idk where else to put this
-        playerLives.RuntimeValue = playerLives.initialValue;
+        playerDeathSignal.Raise(); // make sure ui displays correct # of lives
         transform.position = startingPosition.initialValue;
-        moveSpeed = baseMoveSpeed.initialValue;
+        moveSpeed = baseMoveSpeed.RuntimeValue;
     }
 
     void Update() {
