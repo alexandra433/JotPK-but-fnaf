@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 // Control player movement
 public class PlayerController : MonoBehaviour {
     [SerializeField] FloatValue baseMoveSpeed;
-    public float moveSpeed;
+    //public float moveSpeed;
     [SerializeField] float collisionOffset;
     public ContactFilter2D movementFilter;
     Vector2 movementInput;
@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour {
         animator = GetComponent<Animator>();
         playerDeathSignal.Raise(); // make sure ui displays correct # of lives
         transform.position = startingPosition.initialValue;
-        moveSpeed = baseMoveSpeed.RuntimeValue;
+        //moveSpeed = baseMoveSpeed.RuntimeValue;
     }
 
     void Update() {
@@ -56,9 +56,9 @@ public class PlayerController : MonoBehaviour {
                 movementInput, // X and Y values btwn -1 and 1 representing the direction from the body to look for collisions
                 movementFilter, // the settings that determine where a collision can occur (like layers to collide with)
                 castCollisions, // List of collisions to store the found collisions into after the Cast is done
-                moveSpeed * Time.fixedDeltaTime + collisionOffset); // amount to cast is equal to the movement plus an offset
+                baseMoveSpeed.RuntimeValue * Time.fixedDeltaTime + collisionOffset); // amount to cast is equal to the movement plus an offset
             if (count == 0) { // no collisions
-                rb.MovePosition(rb.position + movementInput * moveSpeed * Time.fixedDeltaTime);
+                rb.MovePosition(rb.position + movementInput * baseMoveSpeed.RuntimeValue * Time.fixedDeltaTime);
                 animator.SetBool("isMoving", true);
             }
         } else {
@@ -95,7 +95,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     IEnumerator PlayerDeathCo() {
-        moveSpeed = 0.0f;
+        baseMoveSpeed.RuntimeValue = 0.0f;
         GetComponent<Collider2D>().enabled = false;
         animator.Play("player_death");
         // wait more than 0.4 seconds
@@ -103,7 +103,7 @@ public class PlayerController : MonoBehaviour {
         this.gameObject.SetActive(false);
         transform.position = startingPosition.initialValue;
         GetComponent<Collider2D>().enabled = true;
-        moveSpeed = baseMoveSpeed.initialValue;
+        baseMoveSpeed.RuntimeValue = baseMoveSpeed.initialValue;
         this.gameObject.SetActive(true);
     }
 }

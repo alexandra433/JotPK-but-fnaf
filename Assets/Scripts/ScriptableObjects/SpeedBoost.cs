@@ -9,9 +9,9 @@ public class SpeedBoost : PowerUpEffect {
     private float changeTime;
 
     public override void Apply(GameObject target) {
-        PlayerController p = target.GetComponent<PlayerController>();
-        if (p) {
-            p.moveSpeed *= 2;
-        }
+        // PlayerController p = target.GetComponent<PlayerController>();
+        // if (p) {
+        //     p.moveSpeed *= 2;
+        // }
     }
 }
