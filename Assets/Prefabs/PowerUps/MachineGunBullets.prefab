@@ -98,10 +98,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14da49c1794804444beaca6fba8cdfa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerUpSignal: {fileID: 11400000, guid: 935856ef936c2304bb726be507e2ea25, type: 2}
+  powerUpAcquiredSignal: {fileID: 11400000, guid: 6ae8bba161dc56f4b9ef4ea43e2c82de, type: 2}
+  powerUpGoneSignal: {fileID: 11400000, guid: fe13fa2ab88805445b0fb36c2fbbe744, type: 2}
   itemSprite: {fileID: 1100399119, guid: cc85083c7a3e4aa4b9060875733d3ebb, type: 3}
   inventory: {fileID: 11400000, guid: 0583ce0d586e2324e9693ee17ffd4948, type: 2}
-  usableItemManager: {fileID: 0}
   playerFireRate: {fileID: 11400000, guid: 6f799f4c8726ba04fbee3a19f72ccf87, type: 2}
   newFireRate: 0.1
 --- !u!61 &4789395164845891628

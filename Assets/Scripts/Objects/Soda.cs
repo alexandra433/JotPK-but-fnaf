@@ -11,6 +11,7 @@ public class Soda : UsableItem {
             isUsable = false;
             playerSpeed.RuntimeValue *= speedMultiplier;
             StartCoroutine(SpeedBoostCo());
+            powerUpGoneSignal.Raise();
             //usableItemManager.RemoveItemFromInventoryDisplay();
         }
     }

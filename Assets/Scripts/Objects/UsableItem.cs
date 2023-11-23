@@ -7,7 +7,8 @@ public abstract class UsableItem : Collectible
 {
     UsePowerUp useAction;
     protected bool isUsable;
-    public SignalGame powerUpSignal;
+    public SignalGame powerUpAcquiredSignal;
+    public SignalGame powerUpGoneSignal;
     public Sprite itemSprite;
     [SerializeField] protected Inventory inventory;
     // [SerializeField] Image affectedImage;
@@ -40,9 +41,11 @@ public abstract class UsableItem : Collectible
     void OnTriggerEnter2D (Collider2D other) {
         if (other.CompareTag("Player")) {
             isUsable = true;
-            //usableItemManager.AddItemToInventoryDisplay(this);
-            //inventory.items.Add(this);
-            //powerUpSignal.Raise(); // tell the ui to show the powerUp
+            if (inventory.item != null) {
+                inventory.item.ActivateItem();
+            }
+            inventory.item = this;
+            powerUpAcquiredSignal.Raise(); // tell the ui to show the powerUp
             this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }

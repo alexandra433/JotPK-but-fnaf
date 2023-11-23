@@ -123,17 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &21610437 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4874899121555235342, guid: 0234a17b3af2de1418bc69b38e7480ff, type: 3}
-  m_PrefabInstance: {fileID: 4874899121900822353}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &77813451 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4874899121735314805, guid: 0234a17b3af2de1418bc69b38e7480ff, type: 3}
@@ -3789,97 +3778,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &719971313 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4874899121205149401, guid: 0234a17b3af2de1418bc69b38e7480ff, type: 3}
-  m_PrefabInstance: {fileID: 4874899121900822353}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &719971317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 719971313}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45c454d30f3b1f5469707fb855fae828, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  signal: {fileID: 11400000, guid: c2a517372069e0b45a5a7593a223902f, type: 2}
-  signalEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1531548011}
-        m_TargetAssemblyTypeName: UsableItemManager, Assembly-CSharp
-        m_MethodName: RemoveItemFromInventoryDisplay
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1531548011 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1531548011, guid: 0234a17b3af2de1418bc69b38e7480ff, type: 3}
-  m_PrefabInstance: {fileID: 4874899121900822353}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af1692ab65c38c24887270a4ca594df6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &2092204957 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4874899121021318505, guid: 0234a17b3af2de1418bc69b38e7480ff, type: 3}
-  m_PrefabInstance: {fileID: 4874899121900822353}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2092204959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2092204957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c2af9f2ea15e83498158bed6c61302d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  numCoins: {fileID: 21610437}
-  playerCoins: {fileID: 11400000, guid: 502bde0d3f960674f8b5e5b0e3db6c62, type: 2}
---- !u!114 &2092204960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2092204957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45c454d30f3b1f5469707fb855fae828, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  signal: {fileID: 11400000, guid: aba777f3e8f3c1e448424867035a3485, type: 2}
-  signalEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2092204959}
-        m_TargetAssemblyTypeName: CoinManager, Assembly-CSharp
-        m_MethodName: UpdateCoinsCount
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &2135881308
 GameObject:
   m_ObjectHideFlags: 0
@@ -3933,10 +3831,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4048482040556574369, guid: 2ec3e174f7f58a14984e1bfc2b2cbbbb, type: 3}
-      propertyPath: sceneToLoad
-      value: Scene1to2
-      objectReference: {fileID: 0}
     - target: {fileID: 4317994050403663172, guid: 2ec3e174f7f58a14984e1bfc2b2cbbbb, type: 3}
       propertyPath: m_RootOrder
       value: 7

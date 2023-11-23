@@ -72,7 +72,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4abca8c05dadea344baad047765d91ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Scene2
+  sceneToLoad: Scene1to2
 --- !u!114 &476055272171428717
 MonoBehaviour:
   m_ObjectHideFlags: 0

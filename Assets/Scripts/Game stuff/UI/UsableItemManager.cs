@@ -15,12 +15,11 @@ public class UsableItemManager : MonoBehaviour
         UpdateDisplay();
     }
 
-    public void AddItemToInventoryDisplay(UsableItem newItem) {
+    public void AddItemToInventoryDisplay() {
         if (currentItem) {
             currentItem.ActivateItem();
         }
-        inventory.item = newItem;
-        currentItem = newItem;
+        currentItem = inventory.item;
         UpdateDisplay();
     }
 
