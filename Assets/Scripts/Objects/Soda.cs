@@ -9,7 +9,8 @@ public class Soda : UsableItem {
     public override void ActivateItem() {
         if (isUsable) {
             isUsable = false;
-            playerSpeed.RuntimeValue *= speedMultiplier;
+            //playerSpeed.RuntimeValue *= speedMultiplier;
+            playerSpeed.RuntimeValue += playerSpeed.initialValue;
             StartCoroutine(SpeedBoostCo());
             powerUpGoneSignal.Raise();
             //usableItemManager.RemoveItemFromInventoryDisplay();
@@ -18,7 +19,7 @@ public class Soda : UsableItem {
 
     IEnumerator SpeedBoostCo() {
         yield return new WaitForSeconds(16f);
-        playerSpeed.RuntimeValue = playerSpeed.initialValue;
+        playerSpeed.RuntimeValue -= playerSpeed.initialValue;
         Destroy(this.gameObject);
     }
 }
