@@ -3810,8 +3810,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpSignal: {fileID: 11400000, guid: 935856ef936c2304bb726be507e2ea25, type: 2}
+  inventory: {fileID: 11400000, guid: 0583ce0d586e2324e9693ee17ffd4948, type: 2}
   speedMultiplier: 2
   playerSpeed: {fileID: 11400000, guid: 85f7a4adfcb0a2c458e48fe4e6692946, type: 2}
+  usableItemManager: {fileID: 1531548011}
 --- !u!212 &1311064748
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3905,6 +3907,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5948665, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1531548007 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 878963069, guid: 0234a17b3af2de1418bc69b38e7480ff, type: 3}
+  m_PrefabInstance: {fileID: 4874899121900822353}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1531548011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531548007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af1692ab65c38c24887270a4ca594df6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultSprite: {fileID: -1529177832, guid: ac83f2cc3c2ac7b498a067037705b9e0, type: 3}
+  inventory: {fileID: 11400000, guid: 0583ce0d586e2324e9693ee17ffd4948, type: 2}
 --- !u!1 &2135881308
 GameObject:
   m_ObjectHideFlags: 0
@@ -4238,6 +4259,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 878963071, guid: 0234a17b3af2de1418bc69b38e7480ff, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1529177832, guid: ac83f2cc3c2ac7b498a067037705b9e0, type: 3}
     - target: {fileID: 4874899121735314805, guid: 0234a17b3af2de1418bc69b38e7480ff, type: 3}
       propertyPath: m_Name
       value: Canvas

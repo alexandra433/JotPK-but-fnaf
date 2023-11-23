@@ -1,0 +1,34 @@
+{
+    "name": "UsePowerUp",
+    "maps": [
+        {
+            "name": "UseItem",
+            "id": "1191a86b-ef9b-4a8e-a747-c548375ac6e3",
+            "actions": [
+                {
+                    "name": "UseItem",
+                    "type": "Button",
+                    "id": "43451fe9-b76d-4909-a8d0-051b397871df",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "8bd67be9-4c91-4034-be8f-dea7b2030291",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UseItem",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
