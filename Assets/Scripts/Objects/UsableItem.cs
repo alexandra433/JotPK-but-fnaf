@@ -9,6 +9,7 @@ public abstract class UsableItem : MonoBehaviour
     public SignalGame powerUpSignal;
     public Sprite itemSprite;
     [SerializeField] protected Inventory inventory;
+    public UsableItemManager usableItemManager;
 
     private void Awake() {
         useAction = new UsePowerUp();
@@ -31,5 +32,17 @@ public abstract class UsableItem : MonoBehaviour
 
     public void RemoveItemWhenPlayerDies() {
         isUsable = false;
+    }
+
+
+    void OnTriggerEnter2D (Collider2D other) {
+        if (other.CompareTag("Player")) {
+            isUsable = true;
+            usableItemManager.AddItemToInventoryDisplay(this);
+            //inventory.items.Add(this);
+            //powerUpSignal.Raise(); // tell the ui to show the powerUp
+            this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        }
     }
 }

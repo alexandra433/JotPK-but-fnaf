@@ -2,22 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Soda : UsableItem {
-    [SerializeField] float speedMultiplier;
-    [SerializeField] FloatValue playerSpeed;
+public class MachineGun : UsableItem
+{
+    [SerializeField] FloatValue playerFireRate;
+    [SerializeField] float newFireRate;
 
     public override void ActivateItem() {
         if (isUsable) {
             isUsable = false;
-            playerSpeed.RuntimeValue *= speedMultiplier;
+            playerFireRate.RuntimeValue = newFireRate;
             StartCoroutine(SpeedBoostCo());
             usableItemManager.RemoveItemFromInventoryDisplay();
         }
     }
 
     IEnumerator SpeedBoostCo() {
-        yield return new WaitForSeconds(16f);
-        playerSpeed.RuntimeValue = playerSpeed.initialValue;
+        yield return new WaitForSeconds(12f);
+        playerFireRate.RuntimeValue = playerFireRate.initialValue;
         Destroy(this.gameObject);
     }
 }

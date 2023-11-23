@@ -19,7 +19,8 @@ public class PlayerController : MonoBehaviour {
     GameObject bulletPrefab;
     Vector2 shootDirection;
     // https://docs.unity3d.com/ScriptReference/Time-time.html
-    public float fireRate = 0.3f;
+    //public float fireRate = 0.3f;
+    [SerializeField] FloatValue fireRate;
     float nextFire = 0.0f;
 
     [SerializeField] VectorValue startingPosition;
@@ -39,7 +40,7 @@ public class PlayerController : MonoBehaviour {
 
     void Update() {
         if (shootDirection != Vector2.zero && Time.time > nextFire) {
-            nextFire = Time.time + fireRate;
+            nextFire = Time.time + fireRate.RuntimeValue;
             animator.SetFloat("Shoot X", shootDirection.x);
             animator.SetFloat("Shoot Y", shootDirection.y);
             animator.SetBool("isShooting", true);
