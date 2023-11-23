@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour {
     void Start() {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        playerDeathSignal.Raise(); // make sure ui displays correct # of lives
+        // playerDeathSignal.Raise(); // make sure ui displays correct # of lives
         transform.position = startingPosition.initialValue;
         //moveSpeed = baseMoveSpeed.RuntimeValue;
     }

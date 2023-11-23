@@ -19,7 +19,7 @@ public class LootTable : ScriptableObject
     {
         int cumulProb = 0;
         int currentProb = Random.Range(0, maxProb);
-        Debug.Log("currentProb: " + currentProb);
+        // Debug.Log("currentProb: " + currentProb);
         for (int i = 0; i < loots.Length; i++)
         {
             cumulProb += loots[i].lootChance;
