@@ -12,14 +12,16 @@ public class Soda : UsableItem {
             isUsable = false;
             playerSpeed.RuntimeValue *= speedMultiplier;
             StartCoroutine(SpeedBoostCo());
+            usableItemManager.RemoveItemFromInventoryDisplay();
         }
     }
 
     void OnTriggerEnter2D (Collider2D other) {
         if (other.CompareTag("Player")) {
             isUsable = true;
+            usableItemManager.AddItemToInventoryDisplay(this);
             //inventory.items.Add(this);
-            powerUpSignal.Raise(); // tell the ui to show the powerUp
+            //powerUpSignal.Raise(); // tell the ui to show the powerUp
             this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }
@@ -28,5 +30,6 @@ public class Soda : UsableItem {
     IEnumerator SpeedBoostCo() {
         yield return new WaitForSeconds(16f);
         playerSpeed.RuntimeValue = playerSpeed.initialValue;
+        Destroy(this.gameObject);
     }
 }

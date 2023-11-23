@@ -7,6 +7,7 @@ public abstract class UsableItem : MonoBehaviour
     UsePowerUp useAction;
     protected bool isUsable;
     public SignalGame powerUpSignal;
+    public Sprite itemSprite;
     [SerializeField] protected Inventory inventory;
 
     private void Awake() {
@@ -27,4 +28,8 @@ public abstract class UsableItem : MonoBehaviour
     }
 
     public abstract void ActivateItem();
+
+    public void RemoveItemWhenPlayerDies() {
+        isUsable = false;
+    }
 }
