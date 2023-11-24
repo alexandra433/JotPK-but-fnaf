@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loots:
   - thisLoot: {fileID: 4860638969996793982, guid: 47cb0d9c1e174a348af6b6062c10bcda, type: 3}
-    lootChance: 2
-  maxProb: 2
+    lootChance: 1
+  maxProb: 1

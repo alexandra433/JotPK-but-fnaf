@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2290888030919398514}
   - component: {fileID: 2290888030919398515}
   - component: {fileID: 2290888030919398512}
+  - component: {fileID: 944729087}
   m_Layer: 0
   m_Name: Life
   m_TagString: Untagged
@@ -98,6 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36f35d78939a8b147ae148ffbddeabdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickedUp: 0
+  timeLeft: 8
+  animator: {fileID: 0}
   powerUpSignal: {fileID: 11400000, guid: a277ea372a7f032418170e766d383bc4, type: 2}
   playerHealth: {fileID: 11400000, guid: 98df6e75e4e53cc4da1da81b538f2502, type: 2}
 --- !u!61 &2290888030919398512
@@ -126,3 +130,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.74882567, y: 0.69422245}
   m_EdgeRadius: 0
+--- !u!95 &944729087
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2290888030919398516}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 430d93ca67ae0844c9836efa5516e892, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

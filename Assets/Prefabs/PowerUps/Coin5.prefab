@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7190438299384120505}
   - component: {fileID: 7190438299384120507}
   - component: {fileID: 7190438299384120506}
+  - component: {fileID: 994737736}
   m_Layer: 0
   m_Name: Coin5
   m_TagString: Untagged
@@ -114,6 +115,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa0852f708a5901448f97f36525cffc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickedUp: 0
+  timeLeft: 8
+  animator: {fileID: 0}
   powerUpSignal: {fileID: 11400000, guid: aba777f3e8f3c1e448424867035a3485, type: 2}
   playerCoins: {fileID: 11400000, guid: 502bde0d3f960674f8b5e5b0e3db6c62, type: 2}
   amountToIncrease: 5
+--- !u!95 &994737736
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7190438299384120510}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 902324445bf7af645af4bce1a7a31d8d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

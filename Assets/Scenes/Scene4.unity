@@ -2979,6 +2979,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8152410648817771709, guid: 982b1c9d049b6f04d94afbc4b7f4994d, type: 3}
+      propertyPath: debug
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152410648817771709, guid: 982b1c9d049b6f04d94afbc4b7f4994d, type: 3}
+      propertyPath: endOfLevel
+      value: 
+      objectReference: {fileID: 11400000, guid: 938f7e39bae6de4429d2e8571ce0add8, type: 2}
+    - target: {fileID: 8152410648817771709, guid: 982b1c9d049b6f04d94afbc4b7f4994d, type: 3}
       propertyPath: possibleEnemies.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -4238,6 +4246,50 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7aaa0a1fcad4de24bb1e50f7f3c579cd, type: 3}
+--- !u!1 &1786632617 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1981639605955732331, guid: 7aaa0a1fcad4de24bb1e50f7f3c579cd, type: 3}
+  m_PrefabInstance: {fileID: 1786632616}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1786632618 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1981639605955732325, guid: 7aaa0a1fcad4de24bb1e50f7f3c579cd, type: 3}
+  m_PrefabInstance: {fileID: 1786632616}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786632617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95d19700e8193324fb81da66c8bf1ca9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1786632619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786632617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45c454d30f3b1f5469707fb855fae828, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  signal: {fileID: 11400000, guid: 938f7e39bae6de4429d2e8571ce0add8, type: 2}
+  signalEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1786632618}
+        m_TargetAssemblyTypeName: GameOverScreen, Assembly-CSharp
+        m_MethodName: DisplayGameOverScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &2118557165
 PrefabInstance:
   m_ObjectHideFlags: 0

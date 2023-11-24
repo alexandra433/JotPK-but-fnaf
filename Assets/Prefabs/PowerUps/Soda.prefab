@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4860638969996793979}
   - component: {fileID: 8331506737977902742}
   - component: {fileID: -8124704460875993175}
+  - component: {fileID: 1700406047}
   m_Layer: 0
   m_Name: Soda
   m_TagString: Untagged
@@ -100,6 +101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1e2bc8b7751ae468a47b7129813702, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickedUp: 0
+  timeLeft: 8
   powerUpAcquiredSignal: {fileID: 11400000, guid: 6ae8bba161dc56f4b9ef4ea43e2c82de, type: 2}
   powerUpGoneSignal: {fileID: 11400000, guid: fe13fa2ab88805445b0fb36c2fbbe744, type: 2}
   itemSprite: {fileID: 121435961, guid: cc85083c7a3e4aa4b9060875733d3ebb, type: 3}
@@ -172,3 +175,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ed14a50d2e4a9548a5cd6a0b1c9f1e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1700406047
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4860638969996793983}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 51841a0c8b204864094a46b056cd249e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

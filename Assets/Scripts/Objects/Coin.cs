@@ -9,6 +9,7 @@ public class Coin : PowerUp
 
     void OnTriggerEnter2D (Collider2D other) {
         if (other.CompareTag("Player")) {
+            pickedUp = true;
             playerCoins.RuntimeValue += amountToIncrease;
             powerUpSignal.Raise();
             Destroy(this.gameObject);

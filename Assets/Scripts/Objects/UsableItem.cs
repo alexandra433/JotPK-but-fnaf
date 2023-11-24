@@ -26,7 +26,8 @@ public abstract class UsableItem : Collectible
         useAction.Disable();
     }
 
-    private void Start() {
+    protected override void Start() {
+        base.Start();
     // bind action to a function
         useAction.UseItem.UseItem.performed += _ => ActivateItem();
     }
@@ -44,6 +45,7 @@ public abstract class UsableItem : Collectible
 
     void OnTriggerEnter2D (Collider2D other) {
         if (other.CompareTag("Player")) {
+            pickedUp = true;
             isUsable = true;
             if (inventory.item != null) {
                 // if inventory is full, use the new item
