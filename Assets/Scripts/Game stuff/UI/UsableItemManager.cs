@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using JetBrains.Annotations;
-using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 
 public class UsableItemManager : MonoBehaviour
@@ -16,9 +12,9 @@ public class UsableItemManager : MonoBehaviour
     }
 
     public void AddItemToInventoryDisplay() {
-        if (currentItem) {
-            currentItem.ActivateItem();
-        }
+        // if (currentItem) {
+        //     currentItem.ActivateItem();
+        // }
         currentItem = inventory.item;
         UpdateDisplay();
     }

@@ -33,6 +33,9 @@ public abstract class UsableItem : Collectible
 
     public abstract void ActivateItem();
 
+    // for activating items automatically when inventory is full
+    public abstract void AutoActivateItem();
+
     public void RemoveItemWhenPlayerDies() {
         isUsable = false;
     }
@@ -42,10 +45,12 @@ public abstract class UsableItem : Collectible
         if (other.CompareTag("Player")) {
             isUsable = true;
             if (inventory.item != null) {
-                inventory.item.ActivateItem();
+                // if inventory is full, use the new item
+                AutoActivateItem();
+            } else {
+                inventory.item = this;
+                powerUpAcquiredSignal.Raise(); // tell the ui to show the powerUp
             }
-            inventory.item = this;
-            powerUpAcquiredSignal.Raise(); // tell the ui to show the powerUp
             this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }

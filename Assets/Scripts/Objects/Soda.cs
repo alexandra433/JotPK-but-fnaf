@@ -13,13 +13,27 @@ public class Soda : UsableItem {
             playerSpeed.RuntimeValue += playerSpeed.initialValue;
             StartCoroutine(SpeedBoostCo());
             powerUpGoneSignal.Raise();
-            //usableItemManager.RemoveItemFromInventoryDisplay();
+        }
+    }
+
+    public override void AutoActivateItem()
+    {
+        if (isUsable) {
+            isUsable = false;
+            //playerSpeed.RuntimeValue *= speedMultiplier;
+            playerSpeed.RuntimeValue += playerSpeed.initialValue;
+            StartCoroutine(SpeedBoostCo());
         }
     }
 
     IEnumerator SpeedBoostCo() {
         yield return new WaitForSeconds(16f);
-        playerSpeed.RuntimeValue -= playerSpeed.initialValue;
+
+        if (playerSpeed.RuntimeValue - playerSpeed.initialValue > playerSpeed.initialValue) {
+            playerSpeed.RuntimeValue -= playerSpeed.initialValue;
+        } else {
+            playerSpeed.RuntimeValue = playerSpeed.initialValue;
+        }
         Destroy(this.gameObject);
     }
 }

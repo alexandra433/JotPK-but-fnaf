@@ -13,7 +13,15 @@ public class MachineGun : UsableItem
             playerFireRate.RuntimeValue = newFireRate;
             StartCoroutine(SpeedBoostCo());
             powerUpGoneSignal.Raise();
-            //usableItemManager.RemoveItemFromInventoryDisplay();
+        }
+    }
+
+    public override void AutoActivateItem()
+    {
+        if (isUsable) {
+            isUsable = false;
+            playerFireRate.RuntimeValue = newFireRate;
+            StartCoroutine(SpeedBoostCo());
         }
     }
 
