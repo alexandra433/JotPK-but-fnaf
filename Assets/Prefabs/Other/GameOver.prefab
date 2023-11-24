@@ -601,6 +601,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverPanel: {fileID: 1981639604877477436}
   UICanvas: {fileID: 0}
+  floatValuesToReset:
+  - {fileID: 11400000, guid: 98df6e75e4e53cc4da1da81b538f2502, type: 2}
+  - {fileID: 11400000, guid: 502bde0d3f960674f8b5e5b0e3db6c62, type: 2}
 --- !u!114 &1981639605955732324
 MonoBehaviour:
   m_ObjectHideFlags: 0

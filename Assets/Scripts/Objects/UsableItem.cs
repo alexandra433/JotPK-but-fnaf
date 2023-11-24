@@ -38,6 +38,7 @@ public abstract class UsableItem : Collectible
 
     public void RemoveItemWhenPlayerDies() {
         isUsable = false;
+        Destroy(this.gameObject);
     }
 
 
@@ -51,6 +52,7 @@ public abstract class UsableItem : Collectible
                 inventory.item = this;
                 powerUpAcquiredSignal.Raise(); // tell the ui to show the powerUp
             }
+            GetComponent<SaveStuff>().enabled = true; // enable dontdestroyonload script
             this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }

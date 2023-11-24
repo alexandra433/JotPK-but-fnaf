@@ -7,6 +7,7 @@ public class UsableItemManager : MonoBehaviour
     [SerializeField] Inventory inventory;
 
     void Start() {
+        Debug.Log("currentItem " + currentItem);
         currentItem = inventory.item;
         UpdateDisplay();
     }

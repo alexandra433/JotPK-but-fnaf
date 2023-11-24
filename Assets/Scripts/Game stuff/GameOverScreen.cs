@@ -7,6 +7,7 @@ public class GameOverScreen : MonoBehaviour
 {
      [SerializeField] GameObject gameOverPanel;
      [SerializeField] GameObject UICanvas;
+     [SerializeField] List<FloatValue> floatValuesToReset;
 
     public void DisplayGameOverScreen() {
         UICanvas.SetActive(false);
@@ -16,6 +17,9 @@ public class GameOverScreen : MonoBehaviour
 
     public void RestartGame() {
         Time.timeScale = 1f;
+        for (int i = 0; i < floatValuesToReset.Count; i++) {
+            floatValuesToReset[i].RuntimeValue = floatValuesToReset[i].initialValue;
+        }
         SceneManager.LoadScene("Scene1");
     }
 

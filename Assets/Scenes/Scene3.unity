@@ -3296,6 +3296,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0234a17b3af2de1418bc69b38e7480ff, type: 3}
+--- !u!1 &1622490714 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4874899121735314805, guid: 0234a17b3af2de1418bc69b38e7480ff, type: 3}
+  m_PrefabInstance: {fileID: 1622490713}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1676100868
 GameObject:
   m_ObjectHideFlags: 0
@@ -4230,6 +4235,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1981639605955732325, guid: 7aaa0a1fcad4de24bb1e50f7f3c579cd, type: 3}
+      propertyPath: UICanvas
+      value: 
+      objectReference: {fileID: 1622490714}
     - target: {fileID: 1981639605955732326, guid: 7aaa0a1fcad4de24bb1e50f7f3c579cd, type: 3}
       propertyPath: m_Pivot.x
       value: 0
