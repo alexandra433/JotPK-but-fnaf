@@ -3802,30 +3802,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 1610236516470489634, guid: d41aa914497fdc54c9b4df8edb4c9013, type: 3}
   fireRate: {fileID: 11400000, guid: 6f799f4c8726ba04fbee3a19f72ccf87, type: 2}
-  NSpot:
-    spawnPoint: {fileID: 819345128}
+  pointsToSpawnAt:
+  - spawnPoint: {fileID: 819345128}
     direction: {x: 0, y: 1}
-  ESpot:
-    spawnPoint: {fileID: 1695653527}
+  - spawnPoint: {fileID: 1695653527}
     direction: {x: 1, y: 0}
-  WSpot:
-    spawnPoint: {fileID: 2090612869}
+  - spawnPoint: {fileID: 2090612869}
     direction: {x: -1, y: 0}
-  SSpot:
-    spawnPoint: {fileID: 380175450}
+  - spawnPoint: {fileID: 380175450}
     direction: {x: 0, y: -1}
-  NESpot:
-    spawnPoint: {fileID: 2004733228}
-    direction: {x: 0.71, y: 0.71}
-  NWSpot:
-    spawnPoint: {fileID: 757871880}
+  - spawnPoint: {fileID: 1516367467}
     direction: {x: 0.71, y: -0.71}
-  SESpot:
-    spawnPoint: {fileID: 1516367467}
-    direction: {x: 0.71, y: -0.71}
-  SWSpot:
-    spawnPoint: {fileID: 1326754171}
-    direction: {x: -0.71, y: -0.71}
+  - spawnPoint: {fileID: 2004733228}
+    direction: {x: 0.71, y: 1}
+  - spawnPoint: {fileID: 1326754171}
+    direction: {x: -1, y: -1}
+  - spawnPoint: {fileID: 757871880}
+    direction: {x: -1, y: 1}
 --- !u!1 &757871880 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1105973480491629809, guid: 103190b051336c341b92dd2fb79b9ba2, type: 3}

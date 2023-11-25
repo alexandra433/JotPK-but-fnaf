@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -20,27 +22,18 @@ public class PlayerShootingController : MonoBehaviour
     //public float fireRate = 0.3f;
     [SerializeField] FloatValue fireRate;
     float nextFire = 0.0f;
-    // 1 - default, 3 - cone thing, 2 - wagon wheel
+    // 1 - default, 2 - cone thing, 3 - wagon wheel
     int gunType = 1;
 
     Animator animator;
     Rigidbody2D rb;
-
-    public BulletSpawnPoint NSpot;
-    public BulletSpawnPoint ESpot;
-    public BulletSpawnPoint WSpot;
-    public BulletSpawnPoint SSpot;
-    public BulletSpawnPoint NESpot;
-    public BulletSpawnPoint NWSpot;
-    public BulletSpawnPoint SESpot;
-    public BulletSpawnPoint SWSpot;
 
     private Vector2 SWDirection = new Vector2(-0.71f, -0.71f);
     private Vector2 SEDirection = new Vector2(0.71f, -0.71f);
     // private Vector2 NWDirection = new Vector2(0.71f, -0.71f);
     private Vector2 NEDirection = new Vector2(0.71f, 0.71f);
 
-    List<BulletSpawnPoint> pointsToSpawnAt = new List<BulletSpawnPoint>();
+    [SerializeField] List<BulletSpawnPoint> pointsToSpawnAt = new List<BulletSpawnPoint>();
 
     void Start()
     {
@@ -71,10 +64,11 @@ public class PlayerShootingController : MonoBehaviour
             case 1: // default gun
                 ShootBullet();
                 break;
-            case 2: // wagon wheel takes predence over cone-shape
-                break;
-            case 3: // cone shape
+            case 2: // cone shape
                 ChooseConePattern();
+                break;
+            case 3: // wagon wheel
+                ShootAllDirections();
                 break;
         }
     }
@@ -96,58 +90,47 @@ public class PlayerShootingController : MonoBehaviour
     {
         if (shootDirection.Equals(Vector2.up))
         {
-            pointsToSpawnAt.Add(NSpot);
-            pointsToSpawnAt.Add(NESpot);
-            pointsToSpawnAt.Add(NWSpot);
+
         } else if (shootDirection.Equals(Vector2.down))
         {
-            pointsToSpawnAt.Add(SSpot);
-            pointsToSpawnAt.Add(SESpot);
-            pointsToSpawnAt.Add(SWSpot);
+
         } else if (shootDirection.Equals(Vector2.left))
         {
-            pointsToSpawnAt.Add(WSpot);
-            pointsToSpawnAt.Add(SWSpot);
-            pointsToSpawnAt.Add(NWSpot);
+
         } else if (shootDirection.Equals(Vector2.right))
         {
-            pointsToSpawnAt.Add(ESpot);
-            pointsToSpawnAt.Add(SESpot);
-            pointsToSpawnAt.Add(NESpot);
+
         } else if (shootDirection.Equals(SEDirection))
         {
-            pointsToSpawnAt.Add(SSpot);
-            pointsToSpawnAt.Add(SESpot);
-            pointsToSpawnAt.Add(ESpot);
+
         } else if (shootDirection.Equals(SWDirection))
         {
-            pointsToSpawnAt.Add(SSpot);
-            pointsToSpawnAt.Add(SWSpot);
-            pointsToSpawnAt.Add(WSpot);
+
         } else if (shootDirection.Equals(NEDirection))
         {
-            pointsToSpawnAt.Add(NSpot);
-            pointsToSpawnAt.Add(NESpot);
-            pointsToSpawnAt.Add(ESpot);
+
         } else
         {
-            pointsToSpawnAt.Add(NSpot);
-            pointsToSpawnAt.Add(NWSpot);
-            pointsToSpawnAt.Add(WSpot);
+
         }
         ShootConePattern();
     }
 
     private void ShootConePattern()
     {
+
+    }
+
+    private void ShootAllDirections()
+    {
         for (int i = 0; i < pointsToSpawnAt.Count; i++)
         {
-            // Debug.Log(pointsToSpawnAt[i].direction);
-            Vector2 currentShootDirection = pointsToSpawnAt[i].direction;
-            GameObject bulletObject = Instantiate(bulletPrefab, rb.position + currentShootDirection * 0.5f, Quaternion.identity);
+            Vector2 bulletDirection = pointsToSpawnAt[i].direction;
+            Vector2 spawnPosition = pointsToSpawnAt[i].spawnPoint.transform.position;
+            GameObject bulletObject = Instantiate(bulletPrefab, spawnPosition + bulletDirection * 0.5f, Quaternion.identity);
             BulletScript bullet = bulletObject.GetComponent<BulletScript>();
-            bullet.Shoot(currentShootDirection);
+            bullet.Shoot(bulletDirection);
         }
-        pointsToSpawnAt.Clear();
     }
+
 }
