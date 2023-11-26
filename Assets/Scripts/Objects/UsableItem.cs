@@ -56,7 +56,7 @@ public abstract class UsableItem : Collectible
             }
             GetComponent<SaveStuff>().enabled = true; // enable dontdestroyonload script
             this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
-            this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            this.gameObject.GetComponent<Collider2D>().enabled = false;
         }
     }
 }

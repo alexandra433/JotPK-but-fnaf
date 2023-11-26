@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1105973480491629809}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.6, y: 0.7, z: 0}
+  m_LocalPosition: {x: -0.7, y: 0.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -55,7 +55,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1224624305209509292}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6, y: 0.7, z: 0}
+  m_LocalPosition: {x: 0.7, y: 0.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -86,7 +86,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1303055958620158273}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6, y: -0.7, z: 0}
+  m_LocalPosition: {x: 0.7, y: -0.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -117,7 +117,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1316620795387845046}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.6, y: -0.7, z: 0}
+  m_LocalPosition: {x: -0.7, y: -0.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -170,6 +170,7 @@ GameObject:
   - component: {fileID: 385167561680929128}
   - component: {fileID: 4324924310958475672}
   - component: {fileID: -8283704445320735549}
+  - component: {fileID: 743455804}
   m_Layer: 7
   m_Name: RedGFreddy
   m_TagString: Player
@@ -357,8 +358,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  bulletPrefab: {fileID: 1610236516470489634, guid: d41aa914497fdc54c9b4df8edb4c9013, type: 3}
-  fireRate: {fileID: 11400000, guid: 6f799f4c8726ba04fbee3a19f72ccf87, type: 2}
+  playerShootingController: {fileID: 0}
   startingPosition: {fileID: 11400000, guid: 98a0adac1c47cea4a81f0567255c3536, type: 2}
   playerDeathSignal: {fileID: 11400000, guid: c2a517372069e0b45a5a7593a223902f, type: 2}
   gameOverSignal: {fileID: 11400000, guid: 2b90ff817a5813a43aae016453aab9ca, type: 2}
@@ -383,6 +383,38 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &743455804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2494377040002563232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26461cbcae3b4184899530b27ccdccf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 1610236516470489634, guid: d41aa914497fdc54c9b4df8edb4c9013, type: 3}
+  fireRate: {fileID: 11400000, guid: 6f799f4c8726ba04fbee3a19f72ccf87, type: 2}
+  gunType: {fileID: 11400000, guid: 4786fece800e93148bd5469a33831f55, type: 2}
+  pointsToSpawnAt:
+  - spawnPoint: {fileID: 7198840389560909913}
+    direction: {x: 0, y: 1}
+  - spawnPoint: {fileID: 1435362848338099703}
+    direction: {x: 1, y: 0}
+  - spawnPoint: {fileID: 5859497010573268651}
+    direction: {x: -1, y: 0}
+  - spawnPoint: {fileID: 5253737882685388902}
+    direction: {x: 0, y: -1}
+  - spawnPoint: {fileID: 1303055958620158273}
+    direction: {x: 0.71, y: -0.71}
+  - spawnPoint: {fileID: 1224624305209509292}
+    direction: {x: 0.71, y: 1}
+  - spawnPoint: {fileID: 1316620795387845046}
+    direction: {x: -1, y: -1}
+  - spawnPoint: {fileID: 1105973480491629809}
+    direction: {x: -1, y: 1}
 --- !u!1 &5253737882685388902
 GameObject:
   m_ObjectHideFlags: 0

@@ -23,7 +23,7 @@ public class PlayerShootingController : MonoBehaviour
     [SerializeField] FloatValue fireRate;
     float nextFire = 0.0f;
     // 1 - default, 2 - cone thing, 3 - wagon wheel
-    int gunType = 1;
+    [SerializeField] FloatValue gunType;
 
     Animator animator;
     Rigidbody2D rb;
@@ -59,7 +59,7 @@ public class PlayerShootingController : MonoBehaviour
     }
 
     private void DecideGun() {
-        switch(gunType)
+        switch(gunType.RuntimeValue)
         {
             case 1: // default gun
                 ShootBullet();
@@ -133,4 +133,8 @@ public class PlayerShootingController : MonoBehaviour
         }
     }
 
+    public void ResetFireRate()
+    {
+        fireRate.RuntimeValue = fireRate.initialValue;
+    }
 }

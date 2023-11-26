@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour {
 
     Animator animator;
 
+    [SerializeField] PlayerShootingController playerShootingController;
+
     // [SerializeField]
     // GameObject bulletPrefab;
     // Vector2 shootDirection;
@@ -33,6 +35,7 @@ public class PlayerController : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
+        playerShootingController = GetComponent<PlayerShootingController>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         // playerDeathSignal.Raise(); // make sure ui displays correct # of lives
@@ -101,6 +104,7 @@ public class PlayerController : MonoBehaviour {
     // Player dies after touching an Enemy
     public void Die() {
         playerLives.RuntimeValue -= 1;
+        playerShootingController.ResetFireRate();
         if (playerLives.RuntimeValue >= 0) {
             playerDeathSignal.Raise();
             StartCoroutine(PlayerDeathCo());
