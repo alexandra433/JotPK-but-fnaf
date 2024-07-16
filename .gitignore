@@ -6,7 +6,8 @@
 /[Tt]emp/
 /[Oo]bj/
 /[Bb]uild/
-/[Bb]uilds/
+/[Bb]uilds/*
+!Builds/Build5.1
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
 

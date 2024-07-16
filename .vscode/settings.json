@@ -52,5 +52,5 @@
         "Temp/": true
     },
     "dotnet.preferCSharpExtension": true,
-    "dotnet.defaultSolution": "FnafFangame.sln"
+    "dotnet.defaultSolution": "2dshootergame.sln"
 }
